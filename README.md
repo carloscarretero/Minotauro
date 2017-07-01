@@ -40,3 +40,6 @@ Here is a snapshot of the Python app, which comunicates with the Minotaur via Bl
 <p align="center">
   <img src="https://github.com/carloscarretero/Minotauro/blob/master/app.PNG" />
 </p>
+
+Here is a video of the final performance of the Minotaur
+https://youtu.be/KZMLZhUHgcc
