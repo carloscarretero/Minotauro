@@ -1,11 +1,9 @@
 # Minotaur
- <iframe width="420" height="315" align="center"
-src="https://youtu.be/KZMLZhUHgcc">
-</iframe> 
-
 <p align="center">
   <img src="https://github.com/carloscarretero/Minotauro/blob/master/games_minotaur.jpg" />
 </p>
+
+Video: https://youtu.be/KZMLZhUHgcc
 
 ## Creation
   - Authors: Carlos Carretero Aguilar, Rafael Moreno Anarte
