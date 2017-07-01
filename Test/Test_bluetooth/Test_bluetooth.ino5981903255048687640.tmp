@@ -1,0 +1,30 @@
+/*
+ * 	-------------------------------------------------------------------------
+ * 	|  PC/Mobile - Arduino bluetooth connection								|
+ *	|  Author:  Carlos Carretero                                           	|
+ * 	|  Date:    11 - 16 - 2015                                             	|
+ * 	|  Version: 1.00                                                       	|
+ * 	|  Description: This test verify the bluetooth connection between 		|
+ *	|  Arduino and the PC/mobile by sending some messages from arduino		| 
+ * 	-------------------------------------------------------------------------
+ */
+
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(3, 4); // RX, TX
+
+ 
+void setup()
+{
+	Serial1.begin(9600);
+  Serial.print("AT+NAMECarlos");
+  Serial.print("AT+PIN2222");
+}
+ 
+void loop()
+{
+  Serial1.println("Bluetooth connection...NOT_OK");
+  delay(1000);
+  Serial1.println("Bluetooth connection...OK");
+  delay(1000);
+}
