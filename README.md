@@ -3,7 +3,7 @@
   <img src="https://github.com/carloscarretero/Minotauro/blob/master/games_minotaur.jpg" />
 </p>
 
-Video: https://youtu.be/KZMLZhUHgcc
+Video: https://youtu.be/GfbQU3GQBhM
 
 ## Creation
   - Authors: Carlos Carretero Aguilar, Rafael Moreno Anarte
