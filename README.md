@@ -1,4 +1,7 @@
 # Minotaur
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fcba887037354a4885fac3305625fcf3)](https://www.codacy.com/app/carlos.carreteroaguilar/Minotauro?utm_source=github.com&utm_medium=referral&utm_content=carloscarretero/Minotauro&utm_campaign=badger)
+
 <p align="center">
   <img src="https://github.com/carloscarretero/Minotauro/blob/master/games_minotaur.jpg" />
 </p>
