@@ -198,12 +198,12 @@ pinDR(pinDR), pinDL(pinDL)
 
 bool Reflective::isLineDR()
 {
-  return (analogRead(pinDR) > 500);
+  return (analogRead(pinDR) > 512);
 }
 
 bool Reflective::isLineDL()
 {
-  return (analogRead(pinDL) > 500); 
+  return (analogRead(pinDL) > 512); 
 }
 
 /*-------------------------------------------------------------------*/
@@ -269,31 +269,23 @@ void Engines::goForw()
 	analogWrite(pinLeft1,pwmEL);
 	analogWrite(pinLeft2,0);
 
-	/*while(!reflectives.isLineDR() && !reflectives.isLineDL());
+	while(reflectives.isLineDR() || reflectives.isLineDL());
 	if(reflectives.isLineDR())
 	{	
 		stop_right();
-		while(!reflectives.isLineDL());
+		while(reflectives.isLineDL());
 		stop_all();
 	}
 	else if(reflectives.isLineDL())
 	{
 		stop_left();
-		while(!reflectives.isLineDR());
+		while(reflectives.isLineDR());
 		stop_all();
 	}
 
-  delay(500);
-
-  analogWrite(pinRight1,pwmER);
-  analogWrite(pinRight2,0);
-  analogWrite(pinLeft1,pwmEL);
-  analogWrite(pinLeft2,0);*/
-  
-  delay(1500);
-
-  stop_all();
-
+	/*
+		Continuar hasta centro de celda
+	*/
 }
 
 void Engines::pivot(int dir)
@@ -305,7 +297,7 @@ void Engines::pivot(int dir)
 		analogWrite(pinLeft1,0);
 		analogWrite(pinLeft2,pwmEL);
 
-		delay(600);
+		delay(500);
 
 		analogWrite(pinRight1,0);
 		analogWrite(pinRight2,0);
@@ -319,7 +311,7 @@ void Engines::pivot(int dir)
 		analogWrite(pinLeft1,pwmEL);
 		analogWrite(pinLeft2,0);
 
-		delay(600);
+		delay(500);
 
 		analogWrite(pinRight1,0);
 		analogWrite(pinRight2,0);
@@ -333,7 +325,7 @@ void Engines::pivot(int dir)
 		analogWrite(pinLeft1,pwmEL);
 		analogWrite(pinLeft2,0);
 
-		delay(1100);
+		delay(1000);
 
 		analogWrite(pinRight1,0);
 		analogWrite(pinRight2,0);
@@ -364,14 +356,6 @@ void Engines::stop_all()
 	analogWrite(pinRight2,0);
 	analogWrite(pinLeft1,0);
 	analogWrite(pinLeft2,0);
-}
-
-int Engines::finish()
-{
-	if(/*reflectives.isLineDR() &&*/ reflectives.isLineDL())
-		return 1;
-	else 
-		return 0;
 }
 /*-------------------------------------------------------------------*/
 
@@ -432,12 +416,12 @@ int Sharp::lookLeft()
 	delay(1000); // Wait for servo to take position
 	float sharpVoltage = analogRead(pinSharp)*resolutionADC;
 	servo.goTo(90); // CAMBIAR A FRENTE
-	if( sharpVoltage > 0.5f)
+	if( sharpVoltage < 0.75f)
 	{ // Distance less than 20cm
-		return 1;
+		return 0;
 	}
 	else 
-		return 0;
+		return 1;
 }
 
 int Sharp::lookRight()
@@ -446,12 +430,12 @@ int Sharp::lookRight()
 	delay(1000); // Wait for servo to take position
 	float sharpVoltage = analogRead(pinSharp)*resolutionADC;
 	servo.goTo(90); // CAMBIAR A FRENTE
-	if( sharpVoltage > 0.5f)
+	if( sharpVoltage < 0.75f)
 	{ // Distance less than 20cm
-		return 1;
+		return 0;
 	}
 	else 
-		return 0;
+		return 1;
 }
 
 int Sharp::lookFront()
@@ -459,11 +443,11 @@ int Sharp::lookFront()
 	servo.goTo(90); // CAMBIAR A FRENTE
 	delay(1000); // Wait for servo to take position
 	float sharpVoltage = analogRead(pinSharp)*resolutionADC;
-	if( sharpVoltage > 0.5f)
+	if( sharpVoltage < 0.75f)
 	{ // Distance less than 20cm
-		return 1;
+		return 0;
 	}
 	else 
-		return 0;
+		return 1;
 }
 /* ------------------------------------------------------------------*/

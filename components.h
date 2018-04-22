@@ -18,7 +18,6 @@ class myBluetooth
 		void sendText(const char* text);
 		void sendMaze(int i, int j);
 		void sendWall(int pos);
-		void sendCells(int number);
 };
 
 class mySerial
@@ -30,7 +29,6 @@ class mySerial
 		void sendText(const char* text);
 		void sendMaze(int i, int j);
 		void sendWall(int pos);
-		void sendCells(int number);
 };
 
 class Led
@@ -85,7 +83,6 @@ class Engines
 		void stop_right();
 		void stop_left();
 		void stop_all();
-		int finish();
 	private:
 		int pinRight1, pinRight2,
 			pinLeft1, pinLeft2,
